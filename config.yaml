@@ -1,0 +1,37 @@
+paths:
+  root: .
+  kaggle_raw: data/raw/kaggle
+  domain_raw: data/raw/domain
+  nsw_raw: data/raw/nsw
+  interim: data/interim
+  processed: data/processed
+  models: models
+  reports: reports
+
+ingest:
+  kaggle_filename: sydney_house_prices.csv
+  domain_base_url: ""
+  domain_endpoint: ""
+  domain_params: {}
+  nsw_allowed_extensions:
+    - ".csv"
+    - ".geojson"
+    - ".json"
+
+features:
+  outlier_filter: false
+  outlier_iqr_multiplier: 1.5
+  suburb_encoding_threshold: 50
+
+split:
+  strategy: time
+  train_frac: 0.7
+  val_frac: 0.15
+  test_frac: 0.15
+  random_seed: 42
+
+model:
+  baseline: ridge
+  strong: auto
+  n_iter: 15
+  cv_folds: 3
