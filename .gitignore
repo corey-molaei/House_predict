@@ -1,5 +1,7 @@
 .venv/
 .DS_Store
+**/.DS_Store
+._DS_Store
 __pycache__/
 *.pyc
 
